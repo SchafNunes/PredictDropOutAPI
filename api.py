@@ -1,10 +1,12 @@
 from flask import Flask, request, jsonify
+from flask_cors import CORS  # Import CORS
 
 import pandas as pd
 
 import joblib
 
 app = Flask(__name__)
+CORS(app)  # Initialize CORS
 
 modelo = joblib.load('libs/Dropout.pkl')
 
